@@ -1,0 +1,42 @@
+<html>
+<head>
+<script>
+	
+	function start() {
+		navigator.webkitGetUserMedia({video : true}, gotStream, function() {});
+		btn.disabled = true;
+	}
+	function gotStream(stream) {
+		document.getElementById("vid").src = webkitURL.createObjectURL(stream);
+	}
+</script>
+
+<title>getUserMedia Demo 1</title>
+<style>
+video {
+	border: 5px solid black;
+	width: 480px;
+	height: 360px;
+}
+
+button {
+	font: 18px sans-serif;
+	padding: 8px;
+}
+</style>
+
+<!-- <link type="text/css" rel="stylesheet"
+	href="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/style.css">
+<script type="text/javascript" charset="utf-8"
+	src="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/page_context.js"></script> -->
+
+
+
+</head>
+<body screen_capture_injected="true">
+	<video id="vid" autoplay="true"></video>
+	<br>
+	<button id="btn" onclick="start()">Start</button>
+
+</body>
+</html>
