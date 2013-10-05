@@ -9,5 +9,6 @@ public class WebRTC_DemoServlet extends HttpServlet {
 			throws IOException {
 		resp.setContentType("text/plain");
 		resp.getWriter().println("Hello, world");
+		System.out.println("I changed Something!");
 	}
 }
